@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard.index');
+Route::get('/dashboard/create', 'Admin\DashboardController@create')->name('dashboard.create');
+Route::post('/dashboard/store', 'Admin\DashboardController@store')->name('dashboard.store');
+Route::resource('/produk','Admin\ProdukController');
