@@ -7,5 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Productions extends Model
 {
     protected $table = "production";
-    protected $guarded = [];
+    protected $fillable =   ["name","id_type","description","total","weight","image"];
+
+    public function tipe()
+    {
+        return $this->belongsTo(Type::class, 'id_type');
+    }
 }
+
+

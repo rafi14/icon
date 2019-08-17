@@ -21,7 +21,7 @@
       <div class="box">
         <div class="box-header with-border">
           <h3 style="text-align: center" class="box-title">Table Production</h3><br>
-          <a class="btn btn-primary" href="">Tambah</a>
+          <a class="btn btn-primary" href="{{route('admin.product.create')}}">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -42,15 +42,20 @@
                     <th>type</th>
                     <th>description</th>
                     <th>total</th>
+                    <th>weight</th>
                   </tr>
                 </thead>
                 <tbody>
-              
+              @foreach($products as $product)
                   <tr>
-                    <td></td>
-                    
+                    <td>{{$product->name}}</td>
+                    <td><img src="{{ url('productimage/' . $product->image) }}" width="200"></td>
+                    <td>{{$product->tipe->name}}</td>
+                    <td>{{$product->description}}</td>
+                    <td>{{$product->total}}</td>
+                    <td>{{$product->weight}}</td>
                   </tr>
-             
+             @endforeach
                 </tbody>
               </table>
             </div>
