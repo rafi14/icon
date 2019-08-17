@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post" action="{{route('dashboard.store')}}" enctype="multipart/form-data">
+<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
 @csrf
 <fieldset>
 

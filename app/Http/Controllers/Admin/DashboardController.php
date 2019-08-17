@@ -4,35 +4,36 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Jenishewan;
+// use App\Jenishewan;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        $jenishewan = Jenishewan::get();
-        return view('admin.dashboard',compact('jenishewan'));
+        // $jenishewan = Jenishewan::get();
+        // return view('admin.dashboard',compact('jenishewan'));
+        return view('layouts.master');
     }
     public function create()
     {
-        return view('admin.dashboard-create');
+        // return view('admin.dashboard-create');
         
     }
 
     public function store(Request $request)
     {
-        $gambar=$request->file('gambar');
-        $nama_gambar = $gambar->getClientOriginalName();
-        $simpan_gambar = $gambar->move('adminlte/gambar',$nama_gambar);
+    //     $gambar=$request->file('gambar');
+    //     $nama_gambar = $gambar->getClientOriginalName();
+    //     $simpan_gambar = $gambar->move('adminlte/gambar',$nama_gambar);
 
-        if($simpan_gambar){
-            $jenishewan = new Jenishewan;
-            $jenishewan->nama = $request->input('nama');
-            $jenishewan->gambar = $nama_gambar;
-           if($jenishewan->save()){
-            redirect(route('dashboard.index'));
-    }
-        }
+    //     if($simpan_gambar){
+    //         $jenishewan = new Jenishewan;
+    //         $jenishewan->nama = $request->input('nama');
+    //         $jenishewan->gambar = $nama_gambar;
+    //        if($jenishewan->save()){
+    //         redirect(route('dashboard.index'));
+    // }
+    //     }
 
     }
 

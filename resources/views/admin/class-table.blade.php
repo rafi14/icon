@@ -20,8 +20,8 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 style="text-align: center" class="box-title">Table Hewan</h3><br>
-          <a class="btn btn-primary" href="{{route('dashboard.create')}}">Tambah</a>
+          <h3 style="text-align: center" class="box-title">Table Kelas</h3><br>
+          <a class="btn btn-primary" href="">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -37,17 +37,20 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th>Nama Hewan</th>
-                    <th>Gambar Hewan</th>
+                    <th>name</th>
+                    <th>image</th>
+                   
+                    <th>description</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
-              @foreach($jenishewan as $v)
+              
                   <tr>
-                    <td>{{$v->nama}}</td>
-                    <td><img src="{{asset('adminlte/gambar/' . $v->gambar)}}" alt=""></td>
+                    <td></td>
+                    
                   </tr>
-              @endforeach    
+             
                 </tbody>
               </table>
             </div>
