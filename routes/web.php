@@ -15,18 +15,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard.index');
-Route::get('/dashboard/create', 'Admin\DashboardController@create')->name('dashboard.create');
-Route::post('/dashboard/store', 'Admin\DashboardController@store')->name('dashboard.store');
-Route::resource('/produk','Admin\ProdukController');
-Route::get('dashboard/production-table','Admin\ProductionController@index')->name('admin.product.index');
-Route::get('dashboard/production-create', 'Admin\ProductionController@create')->name('admin.product.create');
-Route::post('dashboard/production-store', 'Admin\ProductionController@store')->name('admin.product.store');
-Route::get('dashboard/role-table','Admin\RoleController@index')->name('admin.role.index');
-Route::get('dashboard/role-create', 'Admin\RoleController@create')->name('admin.role.create');
-Route::post('dashboard/role-store', 'Admin\RoleController@store')->name('admin.role.store');
-Route::get('dashboard/admin-table','Admin\AdminController@index')->name('admin.index');
-Route::get('dashboard/admin-create', 'Admin\AdminController@create')->name('admin.create');
-Route::post('dashboard/admin-store', 'Admin\AdminController@store')->name('admin.store');
-Route::get('dashboard/class-table','Admin\ClassController@index')->name('admin.class.index');
+Route::group(['prefix' => 'dashboard'], function(){
+    Route::get('/', 'Admin\DashboardController@index')->name('dashboard.index');
+    Route::get('/create', 'Admin\DashboardController@create')->name('dashboard.create');
+    Route::post('/store', 'Admin\DashboardController@store')->name('dashboard.store');
+    
+    
+    Route::get('/production-table','Admin\ProductionController@index')->name('admin.product.index');
+    Route::get('/production-create', 'Admin\ProductionController@create')->name('admin.product.create');
+    Route::post('/production-store', 'Admin\ProductionController@store')->name('admin.product.store');
+    Route::get('/production-detail/{id}','Admin\ProductionController@detail')->name('admin.product.detail');
+    Route::get('/production-edit/{id}','Admin\ProductionController@edit')->name('admin.product.edit');
+    Route::put('/production-update/{id}','Admin\ProductionController@update')->name('admin.product.update');
+    Route::get('/production-delete/{id}','Admin\ProductionController@delete')->name('admin.product.delete');
+    
+    Route::get('/role-table','Admin\RoleController@index')->name('admin.role.index');
+    Route::get('/role-create', 'Admin\RoleController@create')->name('admin.role.create');
+    Route::post('/role-store', 'Admin\RoleController@store')->name('admin.role.store');
+    Route::get('/admin-table','Admin\AdminController@index')->name('admin.index');
+    Route::get('/admin-create', 'Admin\AdminController@create')->name('admin.create');
+    Route::post('/admin-store', 'Admin\AdminController@store')->name('admin.store');
+    Route::get('/class-table','Admin\ClassController@index')->name('admin.class.index');
+    
+});
 

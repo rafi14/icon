@@ -43,6 +43,7 @@
                     <th>description</th>
                     <th>total</th>
                     <th>weight</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -54,6 +55,11 @@
                     <td>{{$product->description}}</td>
                     <td>{{$product->total}}</td>
                     <td>{{$product->weight}}</td>
+                    <td>
+                        <a href="{{route('admin.product.detail', $product->id)}}"><i class="fa fa-eye"></i></a>
+                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href=""><i class="fa fa-trash"></i></a>
+                    </td>
                   </tr>
              @endforeach
                 </tbody>
