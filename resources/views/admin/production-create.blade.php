@@ -55,12 +55,14 @@
             <div class="col-md-4">
                 <input id="textinput" name="weight" type="text" placeholder="Weight" class="form-control input-md">
             </div>
-        </div>
+        </div><br>
         
 
         <!-- Text input-->
 
-        <button type="submit">Submit</button>
+        <div class="form-group text-center">
+                  <button class="btn btn-primary" type="submit">Simpan</button>
+        </div>
 
         </fieldset>
         </form>

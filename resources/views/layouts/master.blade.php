@@ -230,6 +230,18 @@
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Admin User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            
+            <li><a href="{{route('admin.class.index')}}"><i class="fa fa-circle-o"></i> Class</a></li>
+          </ul>
+        </li>
+        <!-- <li class="treeview">
+          <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
             <span class="pull-right-container">
@@ -242,12 +254,20 @@
             <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
             <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>
+        </li> -->
+        <li>
+          <a href="{{route('admin.role.index')}}">
+            <i class="fa fa-th"></i> <span>Role</span>
+            <span class="pull-right-container">
+              
+            </span>
+          </a>
         </li>
         <li>
-          <a href="">
-            <i class="fa fa-th"></i> <span>Hewan</span>
+          <a href="{{route('admin.index')}}">
+            <i class="fa fa-th"></i> <span>employee</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">Hot</small>
+              
             </span>
           </a>
         </li>
