@@ -21,7 +21,7 @@
       <div class="box">
         <div class="box-header with-border">
           <h3 style="text-align: center" class="box-title">Table Kelas</h3><br>
-          <a class="btn btn-primary" href="">Tambah</a>
+          <a class="btn btn-primary" href="{{route('admin.class.create')}}">Tambah</a>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -37,19 +37,29 @@
               <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
+                    <th>image</th>  
                     <th>name</th>
-                    <th>image</th>
-                   
                     <th>description</th>
+                    <th>Jenis Produk</th>
+                    <th>Action</th>
                     
                   </tr>
                 </thead>
                 <tbody>
-              
+              @foreach($kelas as $kelasku)
                   <tr>
-                    <td></td>
+                    <td><img src="{{ url('kelasimage/' . $kelasku->image) }}" width="200"></td>
+                    <td>{{$kelasku->name}}</td>
+                    <td>{{$kelasku->description}}</td>
+                    <td>{{$kelasku->product->name}}</td>
+                    <td>
+                        <a href="{{route('admin.class.detail',$kelasku->id)}}"><i class="fa fa-eye"></i></a>
+                        <a href=""><i class="fa fa-pencil"></i></a>
+                        <a href=""><i class="fa fa-trash"></i></a>
+                    </td>
                     
                   </tr>
+              @endforeach    
              
                 </tbody>
               </table>

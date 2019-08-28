@@ -28,6 +28,15 @@ Route::group(['prefix' => 'dashboard'], function(){
     Route::get('/production-edit/{id}','Admin\ProductionController@edit')->name('admin.product.edit');
     Route::put('/production-update/{id}','Admin\ProductionController@update')->name('admin.product.update');
     Route::get('/production-delete/{id}','Admin\ProductionController@delete')->name('admin.product.delete');
+
+    
+    Route::get('/class-table','Admin\ClassController@index')->name('admin.class.index');
+    Route::get('/class-create','Admin\ClassController@create')->name('admin.class.create');
+    Route::post('/class-store','Admin\ClassController@store')->name('admin.class.store');
+    Route::get('/class-detail/{id}','Admin\ClassController@detail')->name('admin.class.detail');
+    Route::get('/class-edit/{id}','Admin\ClassController@edit')->name('admin.class.edit');
+    Route::put('/class-update/{id}','Admin\ClassController@update')->name('admin.class.update');
+    
     
     Route::get('/role-table','Admin\RoleController@index')->name('admin.role.index');
     Route::get('/role-create', 'Admin\RoleController@create')->name('admin.role.create');
@@ -35,7 +44,7 @@ Route::group(['prefix' => 'dashboard'], function(){
     Route::get('/admin-table','Admin\AdminController@index')->name('admin.index');
     Route::get('/admin-create', 'Admin\AdminController@create')->name('admin.create');
     Route::post('/admin-store', 'Admin\AdminController@store')->name('admin.store');
-    Route::get('/class-table','Admin\ClassController@index')->name('admin.class.index');
+    
     
 });
 
